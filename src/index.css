@@ -1,13 +1,194 @@
-body {
+/* 
+colors:
+Yellow : #F2C94C;
+Red : #EB5757;
+Blue : #2F80ED;
+Green : #6FCF97;
+Grey : #E0E0E0;
+
+
+*/
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Quicksand', sans-serif;
 }
+
+/* ................. flex ...................... */
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/*....................Button component.................*/
+.btn {
+  display: inline-block;
+
+  width: 90vw;
+  padding: 16px 0;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+  text-decoration: none;
+  color: #fff;
+
+  background-color: #F2C94C;  /* meant to change*/
+
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+
+  transition: all 0.3s ease;
+}
+
+.btn-yellow {
+  background-color: #F2C94C;
+}
+
+.btn-blue {
+  background-color: #2F80ED;
+}
+
+.btn-grey {
+  background-color: #E0E0E0;
+}
+
+/*............... input component .................... */
+
+.inputComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw;
+  margin: 12px 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+input {
+  /* width: ; */
+  padding: 16px 12px;
+  
+  border: none;
+  border-radius: 8px;
+  /* box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16); */
+  text-decoration: none;
+  color: #333333;
+
+  background-color: #F4F4F4;
+
+  font-weight: 400;
+  font-size: 14px;
+  
+}
+
+.btnpos {
+  position: fixed;
+  bottom: 10px;
+}
+
+/*........................... logo..................... */
+.navigation-logo {
+  width: 26px;
+  padding: 16px 0 24px 0;  
+}
+
+/*......................... Popup.................... */
+
+.popup {
+  /* display: hidden; */
+  width: 90vw;
+  padding: 24px 12px;
+  border-radius: 8px;
+  
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: #fff;
+
+  display: none;
+}
+
+.popup-green {
+  background-color: #6FCF97;
+}
+.popup-red {
+  background-color: #EB5757;
+}
+
+/*............... home page................... */
+.homePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 20vh;
+}
+
+
+.primary-heading {
+  font-size: 96px;
+  font-weight: 400;
+  color: #333;
+  line-height: 86px;
+  text-align: center;
+}
+
+.secondary-heading {
+  font-size: 36px;
+  font-weight: 400;
+  color: #333;
+  line-height: 37px;
+  text-align: center;
+}
+
+
+/*....................register page................... */
+
+.registerPage {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  padding: 0 5vw;
+}
+
+.register-sub-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  line-height: 14px;
+  margin-bottom: 12px;
+}
+
+.register-main-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  line-height: 32px;
+  letter-spacing: -0.05em;
+}
+
+.register-heading {
+  margin-bottom: 30px;
+}
+
