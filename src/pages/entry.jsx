@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Entry = () => {
     return (
         <>
-        <div className='homePage'>
+        <div className='entryPage'>
             <div>
                 <h3 className='secondary-heading'>async</h3>
                 <h1 className='primary-heading'>tic tac toe</h1>
@@ -13,7 +13,7 @@ const Entry = () => {
                     <Link to="/login">
                         <Button btnColor="btn-blue" content="Login" />
                     </Link>
-                    <Link to="/register">
+                    <Link to="/register" >
                         <Button btnColor="btn-yellow" content="Register" />
                     </Link>
             </div>

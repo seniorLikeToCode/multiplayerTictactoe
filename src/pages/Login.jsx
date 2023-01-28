@@ -20,7 +20,7 @@ const Login = () => {
                 </div>
                 
                 <div className='flex-center btnpos'>
-                    <Popup bg_color='red' content='Enter correct details.   ' ></Popup>
+                    <Popup bg_color='red' content='Enter correct details.' ></Popup>
                     <Button btnColor="btn-yellow" content="Login" />
                 </div>
             </div>
