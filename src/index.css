@@ -139,8 +139,7 @@ input {
   z-index: 99;
   grid-template-rows: 100px 100px 100px;
   grid-template-columns: 100px 100px 100px;
-  height: 400px;
-  padding: 10px;
+  height: 350px;
   justify-content: center;
   align-content: center;
   /* transition: z-index 1s ease, height 1s ease; */
@@ -264,6 +263,14 @@ input {
 }
 
 /*.............................start.......................... */
+.startPage {
+  display: flex;
+    flex-direction: column;
+  
+    height: 100vh;
+    padding: 0 5vw;
+}
+
 .player-piece {
   margin: 20px 0;
   font-weight: 400;

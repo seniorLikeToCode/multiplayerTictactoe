@@ -15,7 +15,7 @@ const Invite = () => {
                         <p className='register-main-heading'>Let's get to know you better!</p>
                     </div>
                     <Input labelName='Email' name='name' type="email" placeholder="Type your email here" />   
-                    <Link to="/home/invite" className='btnpos'>
+                    <Link to="/home/start" className='btnpos'>
                         <Button btnColor="btn-yellow" content="Start a new game" />
                     </Link>
                 {/* </div> */}

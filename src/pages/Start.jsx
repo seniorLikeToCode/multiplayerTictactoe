@@ -7,7 +7,7 @@ import Tictactoe from '../components/Tictactoe'
 const Invite = () => {
     return (
         <>
-            <div className='invitePage'>
+            <div className='startPage'>
                 <div>
                     <img className='navigation-logo' src={logo} alt="back" />
                 </div>
