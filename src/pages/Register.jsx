@@ -1,10 +1,37 @@
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import Input from '../components/Input'
 import Button from '../components/Button';
 import logo from '../assests/back-navigation.png';
 import Popup from '../components/Popup';
-import { Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
+
+const URL = 'http://localhost:8080';
 
 const Register = () => {
+    const [data, setData] = useState({
+        name: '',
+        username: '',
+        email: '',
+        password: ''
+    });
+    const [result, setResult] = useState({
+        status: false,
+        message: '',
+        popup: 'none'
+    });
+
+
+    function sendData() {
+        console.log("function is calls");
+        axios.post(`${URL}/register`, data)
+            .then(res => {
+                setResult(res.data)
+                console.log(res);
+            });
+        
+    }
+
     return (
         <>
             <div className='registerPage'>
@@ -18,16 +45,14 @@ const Register = () => {
                     <p className='register-main-heading'>Let's get to know you better!</p>
                 </div>
                 <div className='flex-center'>
-                    <Input labelName='Your Name' name='name' type="text" placeholder="Type your name here" />
-                    <Input labelName='Username' type="text" placeholder="Type your username here" />
-                    <Input labelName='Email' name='name' type="email" placeholder="Type your email here" />
-                    <Input labelName='Password' name='name' type="text" placeholder="Type your password here" />
+                    <Input labelName='Your Name' name='name' type="text" placeholder="Type your name here" data={data} setData={setData} />
+                    <Input labelName='Username' name='username' type="text" placeholder="Type your username here" data={data} setData={setData} />
+                    <Input labelName='Email' name='email' type="email" placeholder="Type your email here" data={data} setData={setData} />
+                    <Input labelName='Password' name='password' type="text" placeholder="Type your password here" data={data} setData={setData} />
                 </div>
                 <div className='flex-center btnpos'>
-                    <Popup bg_color='green' content='Congratulations!!! Account created.' ></Popup>
-                    <Link to="/home">
-                        <Button btnColor="btn-yellow" content="Register" />
-                    </Link>
+                    <Popup result={result}></Popup>
+                    {result.status ? <Navigate to="/home" /> : <Button handler={sendData} btnColor="btn-yellow" content="Login" />}
                 </div>
             </div>
         </>

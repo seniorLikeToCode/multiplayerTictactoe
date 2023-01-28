@@ -15,7 +15,7 @@ const Invite = () => {
                 </div>
                 <p className='register-main-heading'>Let's get to know you better!</p>
                 <p className='player-piece'>Your piece</p>
-                <img className='cross-icon' src={cross} alt='cross'/>
+                <img className='cross-icon' src= {cross} alt='cross'/>
                 <p className='player-chance-heading'>Your Move</p>
                 <Tictactoe></Tictactoe>
                 <div className='btnpos'>

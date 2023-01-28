@@ -1,8 +1,7 @@
-const Popup = ({ bg_color,content }) => {
-    const popup = `popup popup-${bg_color}`
+const Popup = ({result}) => {    
     return (
         <>
-            <div className={popup}>{content}</div>
+            <div style={{display: result.popup}}  className="popup popup-red">{result.message}</div>
         </>
     )
 }

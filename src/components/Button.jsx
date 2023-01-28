@@ -1,8 +1,8 @@
-const Button = ({ btnColor , content }) => {
+const Button = ({handler, btnColor , content }) => {
     const btn = `btn ${btnColor}`
     return (
         <>
-            <button className= {btn}>{content}</button>
+            <button onClick={()=>handler()} className= {btn}>{content}</button>
         </>
     )
 }
