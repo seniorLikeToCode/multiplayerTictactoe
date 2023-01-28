@@ -9,7 +9,9 @@ const Invite = () => {
         <>
             <div className='startPage'>
                 <div>
-                    <img className='navigation-logo' src={logo} alt="back" />
+                    <Link to='/home'>
+                        <img className='navigation-logo' src={logo} alt="back" />
+                    </Link>
                 </div>
                 <p className='register-main-heading'>Let's get to know you better!</p>
                 <p className='player-piece'>Your piece</p>

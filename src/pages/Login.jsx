@@ -2,13 +2,16 @@ import Input from '../components/Input'
 import Button from '../components/Button';
 import logo from '../assests/back-navigation.png';
 import Popup from '../components/Popup';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <>
             <div className='registerPage'>
                 <div>
-                    <img className='navigation-logo' src={logo} alt="back" />
+                    <Link to="/" >
+                        <img className='navigation-logo' src={logo} alt="back" />
+                    </Link>
                 </div>
                 <div className='register-heading'>
                     <p className='register-sub-heading' >Login</p>
@@ -21,7 +24,9 @@ const Login = () => {
                 
                 <div className='flex-center btnpos'>
                     <Popup bg_color='red' content='Enter correct details.' ></Popup>
-                    <Button btnColor="btn-yellow" content="Login" />
+                    <Link to="/home">
+                        <Button btnColor="btn-yellow" content="Login" />
+                    </Link>
                 </div>
             </div>
         </>

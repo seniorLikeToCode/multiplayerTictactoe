@@ -7,7 +7,9 @@ const Invite = () => {
         <>
             <div className='invitePage'>
                 <div>
-                    <img className='navigation-logo' src={logo} alt="back" />
+                    <Link to='/home'>
+                        <img className='navigation-logo' src={logo} alt="back" />
+                    </Link>
                 </div>
                 {/* <div className='flex-center'> */}
                     <div className='register-heading'>
