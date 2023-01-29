@@ -6,8 +6,7 @@ export const AppContextProvider = ({ children }) => {
         password: '',
         name: '',
         username: '',
-        gamePlayed: '',
-        gameId: '',
+        gamePlayed: [],
     })
 
     useEffect(() => {

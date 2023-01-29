@@ -5,18 +5,36 @@ import { Link } from 'react-router-dom';
 import logo from '../assests/back-navigation.png';
 import logo_0 from '../assests/cross.png';
 import logo_1 from '../assests/circle.png';
-// import Tictactoe from '../components/Tictactoe'
 
 const URL = 'http://localhost:8080';
 const Start = () => {
     const currPlayer = 0;
-    const [state, setState] = useState(['', '', '', '', '', '', '', '', ''])
+    const [state, setState] = useState({
+        gameId: '',
+        emailPlayer1: '',
+        emailPlayer2: '',
+        result: '',
+        state: ''
+    })
+    const [turn, setTurn] = useState(false);
+
+
+    // useEffect(() => {
+    //     setState((prev) => {
+    //         emailPlayer1
+    //     })
+    //     axios.post(`${URL}/`)
+    // }, []);
+
+    
+
     const isValid = (e, pos) => {
-        if (state[pos] === '') {  
+        if (state[pos] === '') {
             setState((prev) => {
                 prev[pos] = logo_0
                 return [...prev];
-            })}
+            })
+        }
     }
 
     return (
