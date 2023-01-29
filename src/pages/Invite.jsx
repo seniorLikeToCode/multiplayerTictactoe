@@ -1,8 +1,19 @@
+import React, { useState, useEffect, useContext } from 'react';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assests/back-navigation.png';
 import Input from '../components/Input';
+import { DashBoardContext } from '../context/AppContext';
+
+
 const Invite = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!data.password || !data.username) navigate('/');
+    }, []);
+
+    const { data, setData } = useContext(DashBoardContext);
+
     return (
         <>
             <div className='invitePage'>

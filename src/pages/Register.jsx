@@ -1,20 +1,15 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Input from '../components/Input'
 import Button from '../components/Button';
 import logo from '../assests/back-navigation.png';
 import Popup from '../components/Popup';
 import { Navigate, Link } from 'react-router-dom';
+import { DashBoardContext } from '../context/AppContext';
 
 const URL = 'http://localhost:8080';
-
 const Register = () => {
-    const [data, setData] = useState({
-        name: '',
-        username: '',
-        email: '',
-        password: ''
-    });
+    const { data, setData } = useContext(DashBoardContext);
     const [result, setResult] = useState({
         status: false,
         message: '',
@@ -33,7 +28,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <>  
             <div className='registerPage'>
                 <div>
                     <Link to="/" >

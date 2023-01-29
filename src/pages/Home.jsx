@@ -1,6 +1,16 @@
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
-import {Link} from 'react-router-dom';
+import { DashBoardContext } from '../context/AppContext';
+
 const Home = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        console.log(data);
+        if (!data.password || !data.username) navigate('/');
+    }, []);
+
+    const { data, setData } = useContext(DashBoardContext);
     return (
         <>
             <div className='homePage'>

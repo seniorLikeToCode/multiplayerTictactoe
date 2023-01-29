@@ -143,6 +143,12 @@ input {
   /* transition: z-index 1s ease, height 1s ease; */
 }
 
+.tictactoe-btn {
+  border:none;
+  background-color: #fff;
+  padding: 12px;
+}
+
 .add-border{
   border: 4px solid #F2C94C;
 }
@@ -161,7 +167,7 @@ input {
 }
 
 .icon {
-  width: 54px;
+  width: 60px;
 }
 
 /*............... Entry page................... */
