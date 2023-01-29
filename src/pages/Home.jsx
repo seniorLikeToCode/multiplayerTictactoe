@@ -4,11 +4,11 @@ import Button from '../components/Button';
 import { DashBoardContext } from '../context/AppContext';
 import axios from 'axios';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://capricorn32.onrender.com';
 const Home = () => {
     const { data, setData } = useContext(DashBoardContext);
     const navigate = useNavigate();
-    const [invitations, setInvitations] = useState({});
+    const [invitations, setInvitations] = useState([]);
     useEffect(() => {
         if (!data.password || !data.username) navigate('/');
         else {
@@ -26,8 +26,20 @@ const Home = () => {
                 }).
                 catch((err) => console.log(err, 'invitations not working'));
         }
-        console.log(data);
+        if (data.gamePlayed.length) {
+            setInvitations([]);
+            for (let id in data.gamePlayed) {
+                axios.post(`${URL}/gamedata`, { gameId: data.gamePlayed[id] }).
+                    then(res => {
+                        setInvitations((prev) => {
+                            return [...prev, res.data];
+                        })
+                    })
+            }
+            console.log(invitations)
+        }
     }, []);
+
 
 
     return (
@@ -35,10 +47,28 @@ const Home = () => {
             <div className='homePage'>
                 <h3 className='home-side-heading'>Your Games</h3>
                 <div className='flex-center'>
-                    <h1 className='home-primary-heading'>No Games Found</h1> {/* here i need to makes changes later on */}
-                    <Link to="/home/invite">
-                        <Button btnColor="btn-yellow" content="Start a new game" />
-                    </Link>
+                    {/* here i need to makes changes later on */}
+                    {
+                        data.gamePlayed.length === 0 ?
+                            (
+                                <>
+                                    <h1 className='home-primary-heading'>No Games Found</h1>
+                                    <Link to="/home/invite">
+                                        <Button btnColor="btn-yellow" content="Start a new game" />
+                                    </Link></>
+                            ) : (
+
+                                invitations.map((gameData, index) => (
+                                    <div key={index} className='playerCard flex-center'>
+                                        <h1>Hello, {gameData.data.emailPlayer1} from !</h1>
+                                        {/* <div className='fix-btn'> */}
+                                        <Link to="/home/invite">
+                                            <Button btnColor="fix-btn" content={gameData.data.result == 'none' ? 'View Game' : 'Play!'} />
+                                        </Link>
+                                        {/* </div> */}
+                                    </div>
+                                ))
+                            )}
                 </div>
             </div>
         </>

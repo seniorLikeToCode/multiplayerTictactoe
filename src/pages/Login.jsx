@@ -8,7 +8,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { DashBoardContext } from '../context/AppContext';
 
 
-const URL = 'http://localhost:8080';
+const URL = 'https://capricorn32.onrender.com';
 const Login = () => {
     const { data, setData } = useContext(DashBoardContext);
     const [result, setResult] = useState({

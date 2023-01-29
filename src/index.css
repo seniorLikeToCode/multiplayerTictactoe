@@ -35,7 +35,6 @@ body {
 .btn {
   display: inline-block;
 
-  width: 90vw;
   padding: 16px 0;
   margin: 12px 0;
   border: none;
@@ -55,14 +54,17 @@ body {
 
 .btn-yellow {
   background-color: #F2C94C;
+  width: 90vw;
 }
 
 .btn-blue {
   background-color: #2F80ED;
+  width: 90vw;
 }
 
 .btn-grey {
   background-color: #E0E0E0;
+  width: 90vw;
 }
 
 /*............... input component .................... */
@@ -299,3 +301,16 @@ input {
   background-color: #FFE79E;
 }
 
+.playerCard {
+  background: #FFFFFF;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 90vw;
+  padding: 30px;
+  margin: 2vw 0;
+  background-color:'red';
+}
+
+.fix-btn {
+  width: 80vw;
+}

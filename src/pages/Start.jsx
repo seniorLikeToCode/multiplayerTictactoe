@@ -6,7 +6,7 @@ import logo from '../assests/back-navigation.png';
 import logo_0 from '../assests/cross.png';
 import logo_1 from '../assests/circle.png';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://capricorn32.onrender.com';
 const Start = () => {
     const currPlayer = 0;
     const [state, setState] = useState({

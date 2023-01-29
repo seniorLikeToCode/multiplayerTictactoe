@@ -7,7 +7,7 @@ import Popup from '../components/Popup';
 import { Navigate, Link } from 'react-router-dom';
 import { DashBoardContext } from '../context/AppContext';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://capricorn32.onrender.com';
 const Register = () => {
     const { data, setData } = useContext(DashBoardContext);
     const [result, setResult] = useState({

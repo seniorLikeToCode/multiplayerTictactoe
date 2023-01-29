@@ -6,7 +6,7 @@ import Input from '../components/Input';
 import { DashBoardContext } from '../context/AppContext';
 import axios from 'axios';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://capricorn32.onrender.com';
 const Invite = () => {
     const navigate = useNavigate();
     const { data, setData } = useContext(DashBoardContext);
