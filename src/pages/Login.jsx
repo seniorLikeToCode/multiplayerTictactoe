@@ -14,7 +14,8 @@ const Login = () => {
     const [result, setResult] = useState({
         status: false,
         message: '',
-        popup: 'none'
+        popup: 'none',
+        data: ''
     });
 
 
@@ -23,7 +24,15 @@ const Login = () => {
         axios.post(`${URL}/login`, data)
             .then(res => {
                 setResult(res.data)
-                console.log(res);
+                setData((prev) => {
+                    return {
+                        ...prev,
+                        email: res.data.data.email,
+                        name: res.data.data.name,
+                        gamePlayed: res.data.data.gamePlayed
+                    }
+                })
+                console.log(data);
             });
     }
 

@@ -6,26 +6,30 @@ import axios from 'axios';
 
 const URL = 'http://localhost:8080';
 const Home = () => {
+    const { data, setData } = useContext(DashBoardContext);
     const navigate = useNavigate();
-    const { invitations, setInvitations } = useState({});
+    const [invitations, setInvitations] = useState({});
     useEffect(() => {
         if (!data.password || !data.username) navigate('/');
-        // else {
-        //     console.log('request to backend');
-        //     axios.post(`${URL}/invitation`, data).
-        //         then(res => {
-        //             setInvitations((prev) => {
-        //                 prev = res.data;
-        //             })
-        //         }).
-        //         catch((err) => console.log(err, 'invitations not working'));
-        // }
-
-        console.log(invitations);
-
+        else {
+            console.log('request to backend');
+            axios.post(`${URL}/invitation`, data).
+                then(res => {
+                    setData((prev) => {
+                        return {
+                            ...prev,
+                            email: res.data.data.email,
+                            name: res.data.data.name,
+                            gamePlayed: res.data.data.gamePlayed
+                        }
+                    })
+                }).
+                catch((err) => console.log(err, 'invitations not working'));
+        }
+        console.log(data);
     }, []);
 
-    const { data, setData } = useContext(DashBoardContext);
+
     return (
         <>
             <div className='homePage'>
